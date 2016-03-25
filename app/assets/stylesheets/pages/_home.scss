@@ -1,4 +1,37 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+$height: 400px;
+
+.home {
+  .header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    .left {
+      display: flex;
+      flex: 2;
+      height: $height;
+      background-color: $green;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .top {
+        display: flex;
+        flex: 1;
+        height: $height / 2;
+        background-color: $red;
+      }
+
+      .bottom {
+        display: flex;
+        flex: 1;
+        height: $height / 2;
+        background-color: $blue;
+      }
+    }
+  }
+}

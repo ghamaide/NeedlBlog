@@ -2,13 +2,13 @@
 
 .navbar {
   display: flex;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: $red;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07),0 1px 0 0 rgba(0, 0, 0, 0.03);
+  background: $transparent_white;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 30px;
+  height: 40px;
+  padding: 0px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 
   &.fixed {
     position: fixed;
@@ -19,24 +19,7 @@
   }
 
   .logo {
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    height: 50px;
-  }
-
-  .navbar-inner {
-    margin-right: 50px;
-
-    .link {
-      text-decoration: underline;
-      color: $link;
-      margin: 0 15px;
-
-      &:hover {
-        color: $link-hover;
-      }
-    }
+    height: 30px;
   }
 }
 
