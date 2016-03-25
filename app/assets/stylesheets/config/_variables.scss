@@ -15,6 +15,28 @@ $navbar-font: 'Quicksand', "sans-serif";
 $base-size: 14pt;
 $base-height: 1.4;
 
+// Responsive design
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
 /* -------------------------------------
  * Colors
  * ------------------------------------- */
@@ -26,7 +48,7 @@ $gray-dark: #837D9B;
 $gray: #C1BFCC;
 $gray-light: #EEEDF1;
 $white: #FFFFFF;
-$transparent_white: rgba(255, 255, 255, 0.8);
+$transparent_white: rgba(255, 255, 255, 0.9);
 
 $link: $white;
 $link-hover: $gray;

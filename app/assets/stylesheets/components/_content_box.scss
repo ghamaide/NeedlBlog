@@ -1,0 +1,92 @@
+$max-width: 250px;
+
+.content {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    max-width: $max-width;
+
+    .content_image {
+      display: block;
+      max-width: $max-width;
+      max-height: $max-width;
+      width: auto;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .infos {
+      .title {
+        color: $blue;
+        font-size: 13pt;
+        padding: 0;
+        margin: 15px 0 0 0;
+        text-align: left;
+        font-weight: normal;
+      }
+
+      .subtitle {
+        color: $green;
+        text-transform: uppercase;
+        font-size: 9pt;
+        padding: 0;
+        margin: 5px 0 15px 0;
+        text-align: left;
+        font-weight: normal;
+      }
+
+      .description {
+        color: $blue;
+        font-size: 10pt;
+        padding: 0;
+        margin: 5px 0 10px 0;
+        text-align: justify;
+        font-weight: normal;
+      }
+
+      .footer {
+        margin: 10px 0 0 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .author {
+          color: $gray-dark;
+          font-size: 9pt;
+          padding: 0;
+          text-align: left;
+          font-weight: normal;
+        }
+
+        .analytics {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          flex: 1;
+
+          .views {
+            font-size: 10pt;
+            color: $gray-dark;
+            margin: 0 5px;
+
+            .fa {
+              margin-right: 5px;
+            }
+          }
+
+          .likes {
+            margin: 0 5px;
+            font-size: 10pt;
+            color: $gray-dark;
+
+            .fa {
+              color: $red;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

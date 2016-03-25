@@ -1,4 +1,5 @@
 $height: 400px;
+$margin: 5px;
 
 .home {
   .header {
@@ -10,7 +11,8 @@ $height: 400px;
     .left {
       display: flex;
       flex: 2;
-      height: $height;
+      margin-right: $margin;
+      height: $height + $margin;
       background-color: $green;
     }
 
@@ -18,12 +20,14 @@ $height: 400px;
       display: flex;
       flex-direction: column;
       flex: 1;
+      margin-left: $margin;
 
       .top {
         display: flex;
         flex: 1;
-        height: $height / 2;
+        height: $height / 2 - $margin;
         background-color: $red;
+        margin-bottom: $margin;
       }
 
       .bottom {
@@ -31,7 +35,31 @@ $height: 400px;
         flex: 1;
         height: $height / 2;
         background-color: $blue;
+        margin-top: $margin;
       }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $white;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    @include mobile {
+      margin: 0 50px;
+    }
+
+    @include tablet {
+      margin: 0 100px;
+    }
+
+    @include desktop {
+      margin: 0 150px;
     }
   }
 }
