@@ -4,11 +4,6 @@ body {
   font-family: 'QuickSand';
 }
 
-.wrap {
-  padding-top: 40px;
-  margin-bottom: 60px;
-}
-
 h1 {
   color: $red;
   font-size: 22px;
@@ -27,43 +22,21 @@ h3 {
   font-size: 16px;
 }
 
-.st-content {
-  overflow-y: scroll;
-  background: $gray-light;
-}
-
-.st-content,
-.st-content-inner {
-  position: relative;
-}
-
-.st-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.st-pusher {
-  position: relative;
-  left: 0;
-  z-index: 99;
-  height: 100%;
-  transition: transform 0.5s;
-}
-
-.st-pusher::after {
+.wrap {
   position: absolute;
+  left: 0;
   top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  background: rgba(0,0,0,0.2);
-  content: '';
-  opacity: 0;
-  transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+  width: 100%;
+  background-color: $gray-light;
+  padding-top: 40px;
+  margin-bottom: 60px;
+  transition: all $menu_transition_duration ease;
+
+  &.open {
+    filter: brightness(40%);
+  }
 }
 
-/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-.no-csstransforms3d .st-pusher,
-.no-js .st-pusher {
-  padding-left: 300px;
+.hidden {
+  display: none;
 }

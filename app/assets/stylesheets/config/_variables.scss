@@ -40,7 +40,7 @@ $desktop-width: 1024px;
 /* -------------------------------------
  * Colors
  * ------------------------------------- */
-// Scheme
+
 $red: #FE3139;
 $blue: #3A325D;
 $green: #9CE62A;
@@ -51,8 +51,16 @@ $white: #FFFFFF;
 $transparent_white: rgba(255, 255, 255, 0.9);
 
 $link: $white;
-$link-hover: $gray-light;
+$link-hover: $gray;
 
 $red-google: #D53F38;
 $blue-facebook: #3B5998;
 $blue-twitter: #4099FF;
+
+
+/* -------------------------------------
+ * Menu
+ * ------------------------------------- */
+
+ $menu_width: 300px;
+ $menu_transition_duration: .5s;

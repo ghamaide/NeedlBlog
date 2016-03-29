@@ -21,19 +21,21 @@ $social_icon_height: 32px;
     justify-content: center;
     align-items: center;
     background-color: $white;
-    padding: 30px 50px;
     border-radius: 10px;
 
     @include mobile {
       margin: 0px;
+      padding: 20px;
     }
 
     @include tablet {
-      margin: 0 75px;
+      margin: -25px 75px 0 75px;
+      padding: 20px 25px;
     }
 
     @include desktop {
       margin: -50px 200px 0 200px;
+      padding: 30px 50px;
     }
 
     .header {
@@ -116,10 +118,29 @@ $social_icon_height: 32px;
   }
 
   .content {
-    .article_image {
-      width: calc(100% + 200px);
-      margin: 0 0 0 -100px;
-      max-height: 300px;
+    @include mobile {
+      img {
+        width: calc(100% + 40px);
+        margin: 0 0 0 -20px;
+      }
+    }
+
+    @include tablet {
+      img {
+        width: calc(100% + 100px);
+        margin: 0 0 0 -50px;
+      }
+    }
+
+    @include desktop {
+      img {
+        width: calc(100% + 200px);
+        margin: 0 0 0 -100px;
+      }
+    }
+
+    p {
+      text-align: justify;
     }
   }
 

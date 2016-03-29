@@ -6,19 +6,6 @@
     width: 100%;
     overflow: hidden;
 
-    &:hover {
-      .header_image {
-        transform: scale(1.1, 1.1);
-      }
-    }
-
-    .header_image {
-      flex: 1;
-      filter: brightness(70%);
-      transition: all .2s linear;
-      max-width: 100%;
-    }
-
     .infos {
       z-index: 100;
       position: absolute;

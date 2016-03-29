@@ -1,5 +1,5 @@
 <div class='article'>
-  <%= image_tag 'restaurant.jpg', {class: 'content_image'} %>
+  <%= image_tag 'restaurant.png', {class: 'content_image'} %>
   <div class='container'>
     <div class='header'>
       <%= image_tag 'logo_square.png', {class: 'author_image'} %>
@@ -23,14 +23,7 @@
       </div>
     </div>
     <div class='content'>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ex sit amet, soluta! Labore saepe facilis est maiores provident veritatis magni fugiat, aut nobis blanditiis neque ipsum quod nam accusantium.</p>
-      <p>Incidunt a assumenda iure architecto quos temporibus doloribus illum, molestiae minima quaerat. Modi, beatae! Modi laborum eum doloribus dolorem, tempora, voluptatum commodi et architecto maxime ducimus excepturi sapiente. Eum, asperiores.</p>
-      <%= image_tag 'restaurant.jpg', {class: 'article_image'} %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita ullam tempora, iste rem accusantium aliquid. Velit, fugiat maxime iusto natus. Earum praesentium illum nulla animi a est suscipit, excepturi odio?</p>
-      <p>Quidem nemo, recusandae ipsum ipsam eligendi aspernatur error eveniet, accusamus animi impedit, dolor veritatis voluptas assumenda ut eaque dicta minima iusto sapiente laudantium. Optio impedit provident rem, inventore eligendi sed!</p>
-      <p>Deserunt alias eius, id, perferendis quos facilis tempora explicabo quisquam! Omnis minima, voluptatum illum architecto vero soluta eius ut hic numquam quis magni, eveniet ducimus, tempora nesciunt necessitatibus facere expedita!</p>
-      <%= image_tag 'restaurant.jpg', {class: 'article_image'} %>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla odit nostrum molestiae enim asperiores error eaque adipisci deserunt, distinctio debitis fuga beatae ex suscipit laboriosam. Sit, autem! Harum, eos molestias!</p>
+      <%= @article.content.html_safe %>
     </div>
     <div class='social'>
       <a href='#' class='google-plus'><i class='fa fa-google-plus'></i></a>

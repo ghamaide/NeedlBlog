@@ -1,0 +1,49 @@
+$margin: 20px;
+
+.new_article {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+
+  form {
+    margin: $margin;
+    background-color: $white;
+    padding: 20px;
+    width: calc(100% - 40px);
+
+    div {
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        width: 150px;
+        color: $blue;
+      }
+
+      input {
+        width: 200px;
+        border-color: $gray;
+        border-width: 1px;
+        padding: 4px;
+        border-style: solid;
+      }
+
+      textarea {
+        width: 400px;
+        height: 100px;
+        border-color: $gray;
+      }
+    }
+
+    .btn {
+      padding: 5px 15px;
+      border-radius: 5px;
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
+}

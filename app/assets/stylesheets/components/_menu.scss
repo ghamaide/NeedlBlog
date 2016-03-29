@@ -1,0 +1,63 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: $red;
+  z-index: 101;
+  width: 0;
+  overflow: hidden;
+  transition: width $menu_transition_duration ease;
+
+  .logo {
+    width: 150px;
+    margin: 20px 75px;
+  }
+
+  &.open {
+    width: $menu_width;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 20px;
+
+    li {
+      width: 260px;
+
+      i {
+        font-size: 16pt;
+        margin: 0 10px 0 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: $link;
+        font-size: 14pt;
+
+        &:hover {
+          color: $link_hover;
+        }
+      }  
+    }
+  }
+}
+
+.menu_icon {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  z-index: 101;
+  transition: all $menu_transition_duration ease;
+
+  &.open {
+    left: 10px + $menu_width;
+    filter: brightness(40%);
+  }
+
+  .fa {
+    padding: 10px;
+    font-size: 15pt;
+    color: $red;
+  }
+}
