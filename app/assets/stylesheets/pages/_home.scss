@@ -1,4 +1,5 @@
 $height: 400px;
+$height_mobile: 250px;
 $margin: 5px;
 
 .home {
@@ -8,12 +9,28 @@ $margin: 5px;
     align-items: center;
     justify-content: center;
 
+    @include mobile {
+      flex-direction: column;
+    }
+
     .left {
       display: flex;
-      flex: 2;
       margin-right: $margin;
       height: $height + $margin;
-      background-color: $green;
+
+      @include mobile {
+        flex: 1;
+        margin: 5px 0;
+        height: $height_mobile;
+      }
+
+      @include tablet {
+        flex: 1;
+      }
+
+      @include desktop {
+        flex: 2;
+      }
     }
 
     .right {
@@ -22,20 +39,32 @@ $margin: 5px;
       flex: 1;
       margin-left: $margin;
 
+      @include mobile {
+        margin: 0;
+      }
+
       .top {
         display: flex;
         flex: 1;
         height: $height / 2 - $margin;
-        background-color: $red;
         margin-bottom: $margin;
+
+        @include mobile {
+          height: $height_mobile;
+          margin: 5px 0;
+        }
       }
 
       .bottom {
         display: flex;
         flex: 1;
         height: $height / 2;
-        background-color: $blue;
         margin-top: $margin;
+
+        @include mobile {
+          height: $height_mobile;
+          margin: 5px 0;
+        }
       }
     }
   }
@@ -51,11 +80,11 @@ $margin: 5px;
     padding-top: 20px;
 
     @include mobile {
-      margin: 0 50px;
+      margin: 0px;
     }
 
     @include tablet {
-      margin: 0 100px;
+      margin: 0 75px;
     }
 
     @include desktop {

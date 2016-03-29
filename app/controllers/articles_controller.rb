@@ -23,6 +23,11 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
+  def show
+    puts params['id']
+    @article = Article.find_by(id: params['id'])
+  end
+
   private
 
   def restaurant_params
