@@ -1,11 +1,19 @@
 $max-width: 250px;
 
 .content {
-  .container {
+  a {
     display: flex;
-    flex-direction: column;
-    margin: 15px;
+    flex: 1;
     max-width: $max-width;
+    padding: 13px;
+    margin: 2px;
+    flex-direction: column;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $gray-light;
+      border-radius: 5px;
+    }
 
     .content_image {
       display: block;

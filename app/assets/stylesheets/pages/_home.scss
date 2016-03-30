@@ -1,6 +1,7 @@
 $height: 500px;
 $height_mobile: 250px;
-$margin: 5px;
+$margin: 3px;
+$scale_factor: 1;
 
 .home {
   .header {
@@ -13,10 +14,11 @@ $margin: 5px;
       flex-direction: column;
     }
 
-    a {
+    .left {
       display: flex;
       margin-right: $margin;
       height: $height;
+      filter: brightness(90%);
 
       @include mobile {
         flex: 1;
@@ -33,9 +35,8 @@ $margin: 5px;
         flex: 2;
       }
 
-      .left {
-        flex: 1;
-        display: flex;
+      &:hover {
+        filter: brightness(100%);
       }
     }
 
@@ -50,31 +51,39 @@ $margin: 5px;
         margin: 0;
       }
 
-      a {
-        .top {
-          display: flex;
-          flex: 1;
-          width: 100%;
-          height: $height / 2 - $margin;
-          margin-bottom: $margin;
+      .top {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: $height / 2 - $margin;
+        margin-bottom: $margin;
+        filter: brightness(90%);
 
-          @include mobile {
-            height: $height_mobile;
-            margin: 5px 0;
-          }
+        @include mobile {
+          height: $height_mobile;
+          margin: 5px 0;
         }
 
-        .bottom {
-          display: flex;
-          flex: 1;
-          width: 100%;
-          height: $height / 2 - $margin;
-          margin-top: $margin;
+        &:hover {
+          filter: brightness(100%);
+        }
+      }
 
-          @include mobile {
-            height: $height_mobile;
-            margin: 5px 0;
-          }
+      .bottom {
+        display: flex;
+        flex: 1;
+        width: 100%;
+        height: $height / 2 - $margin;
+        margin-top: $margin;
+        filter: brightness(90%);
+
+        @include mobile {
+          height: $height_mobile;
+          margin: 5px 0;
+        }
+
+        &:hover {
+          filter: brightness(100%);
         }
       }
     }

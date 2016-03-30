@@ -1,36 +1,30 @@
 <div class='home'>
   <div class='header'>
     <% if (@articles.length > 0) %>
-      <%= link_to article_path(@articles.to_a.slice(0)) do %>
-        <div class='left' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
-          <%= render 'shared/header_box', size: 'large', article: @articles.to_a.slice(0) %>
-        </div>
-      <% end %>
+      <div class='left' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+        <%= render 'shared/header_box', size: 'large', article: @articles.to_a.slice(0) %>
+      </div>
     <% end %>
 
     <div class='right'>
       <% if (@articles.length > 1) %>
-        <%= link_to article_path(@articles.to_a.slice(1)) do %>
-          <div class='top' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
-            <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(1) %>
-          </div>
-        <% end %>
+        <div class='top' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+          <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(1) %>
+        </div>
       <% end %>
       <% if (@articles.length > 2) %>
-        <%= link_to article_path(@articles.to_a.slice(2)) do %>
-          <div class='bottom' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
-            <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(2) %>
-          </div>
-        <% end %>
+        <div class='bottom' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+          <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(2) %>
+        </div>
       <% end %>
     </div>
   </div>
 
   <div class='content'>
-    <% if (@articles.length > 3) %>
-      <% @articles.to_a.slice!(3, @articles.length - 1).each do |article| %>
-        <%= render 'shared/content_box', article: article %>
-      <% end %>
+    <% if (@articles.length > 0) %>
+      <% #@articles.to_a.slice!(3, @articles.length - 1).each do |article| %>
+        <%= render 'shared/content_box', article: @articles.to_a.slice(0) %>
+      <% #end %>
     <% end %>
   </div>
 </div>

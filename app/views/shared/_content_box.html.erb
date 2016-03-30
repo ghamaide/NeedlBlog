@@ -1,21 +1,21 @@
-<div class='container'>
+<%= link_to article_path(article) do %>
   <%= image_tag 'restaurant.png', {class: 'content_image'} %>
   <div class='infos'>
-    <h1 class='title'>Stylistic</h1>
-    <h2 class='subtitle'>Blogger interview</h2>
+    <h1 class='title'><%= article.title %></h1>
+    <h2 class='subtitle'><%= article.model %></h2>
     <span class='description'>
-      Stylistic est un site féminin qui ne se prend pas vraiment au sérieux. Né de la rencontre de différentes passions, il passe en revue l’actualité mode.
+      <%= article.summary %>
     </span>
     <div class='footer'>
       <span class='author'>By <%= article.author %></span>
       <div class="analytics">
         <span class='likes'>
-          <i class="fa fa-heart"></i>25
+          <i class="fa fa-heart"></i><%= article.likes %>
         </span>
         <span class='views'>
-          <i class="fa fa-eye"></i>100
+          <i class="fa fa-eye"></i><%= article.views %>
         </span>
       </div>
     </div>
   </div>
-</div>
+<% end %>
