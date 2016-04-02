@@ -17,9 +17,6 @@ class ArticlesController < ApplicationController
 
   def create
     @user = User.find_by(token: params['token'])
-
-    puts restaurant_params
-
     @article = Article.new(restaurant_params)
 
     if (restaurant_params[:author].blank? || restaurant_params[:model].blank? || restaurant_params[:content].blank? || restaurant_params[:summary].blank? || restaurant_params[:title].blank?) then

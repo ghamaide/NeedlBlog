@@ -30,7 +30,7 @@ h3 {
   background-color: $gray-light;
   padding-top: 40px;
   margin-bottom: 60px;
-  transition: all $menu_transition_duration ease;
+  transition: all $menu-transition-duration ease;
 
   &.open {
     filter: brightness(40%);

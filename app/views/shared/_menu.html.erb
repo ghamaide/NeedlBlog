@@ -8,5 +8,15 @@
         </span>
       <% end %>
     </li>
+    <div class='store_container'>
+      <%= link_to root_path do %>
+        <%= image_tag 'app_store.png', {id: 'app_store'} %>
+      <% end %>
+      <!--
+      <%= link_to root_path do %>
+        <%= image_tag 'play_store.png', {class: 'last', id: 'play_store'} %>
+      <% end %>
+      -->
+    </div>
   </ul>
 </nav>

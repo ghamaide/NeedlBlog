@@ -98,6 +98,7 @@ $scale_factor: 1;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    min-height: 400px;
 
     @include mobile {
       margin: 0px;

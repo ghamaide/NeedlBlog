@@ -35,8 +35,6 @@ function resetMenu() {
 };
 
 function bodyClick(evt) {
-  console.log('1');
-  console.log(hasParentClass(evt.target, 'menu'));
   if(!hasParentClass(evt.target, 'menu')) {
     resetMenu();
     document.removeEventListener(eventtype, bodyClick);

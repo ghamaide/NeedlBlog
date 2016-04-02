@@ -7,7 +7,7 @@
   z-index: 101;
   width: 0;
   overflow: hidden;
-  transition: width $menu_transition_duration ease;
+  transition: width $menu-transition-duration ease;
 
   .logo {
     width: 150px;
@@ -15,7 +15,7 @@
   }
 
   &.open {
-    width: $menu_width;
+    width: $menu-width;
   }
 
   ul {
@@ -23,7 +23,8 @@
     padding: 20px;
 
     li {
-      width: 260px;
+      width: $menu-width - 2 * $menu-padding;
+      margin: 20px 0;
 
       i {
         font-size: 16pt;
@@ -38,20 +39,37 @@
         &:hover {
           color: $link_hover;
         }
-      }  
+      }
+    }
+
+    .store_container {
+      display: flex;
+      flex: 1;
+      position: absolute;
+      bottom: $menu-padding;
+      left: $menu-padding;
+
+      img {
+        width: ($menu-width - 2 * $menu-padding) / 2 - 5px;
+        margin: 0 5px 0 0;
+
+        &.last {
+          margin: 0 0 0 5px;
+        }
+      }
     }
   }
 }
 
 .menu_icon {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 10px;
   z-index: 101;
-  transition: all $menu_transition_duration ease;
+  transition: all $menu-transition-duration ease;
 
   &.open {
-    left: 10px + $menu_width;
+    left: 10px + $menu-width;
     filter: brightness(40%);
   }
 

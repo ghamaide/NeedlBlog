@@ -1,3 +1,12 @@
+<% content_for :head do %>
+  <title><%= @article.title %></title>
+  <meta property="og:url"                content="http://needl-blog.herokuapp.com/articles/<%= @article.id %>" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="<%= @article.title %>" />
+  <meta property="og:description"        content="<%= @article.summary %>" />
+  <!--<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />-->
+<% end %>
+
 <div class='article'>
   <%= image_tag 'restaurant.png', {class: 'content_image'} %>
   <div class='container'>
@@ -9,17 +18,17 @@
         <span class='type'>BLOGGER INTERVIEW</span>
         <div class='analytics'>
           <span class='likes'>
-            <i class='fa fa-heart'></i>25
+            <i class='fa fa-heart'></i><%= @article.likes %>
           </span>
           <span class='views'>
-            <i class='fa fa-eye'></i>100
+            <i class='fa fa-eye'></i><%= @article.views %>
           </span>
         </div>
       </div>
       <div class='social'>
-        <a href='#' class='google-plus'><i class='fa fa-google-plus'></i></a>
-        <a href='#' class='facebook'><i class='fa fa-facebook'></i></a>
-        <a href='#' class='twitter'><i class='fa fa-twitter'></i></a>
+        <a href='#' id='google-share' class='google-plus'><i class='fa fa-google-plus'></i></a>
+        <a href='#' id='facebook-share' class='facebook'><i class='fa fa-facebook'></i></a>
+        <a href='#' id='twitter-share' class='twitter'><i class='fa fa-twitter'></i></a>
       </div>
     </div>
     <div class='content'>
