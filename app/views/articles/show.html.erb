@@ -33,19 +33,23 @@
         <a href="https://plus.google.com/share?url={http://blog.needl.fr/articles/<%= @article.id %>}" id='google-share' class='google-plus' onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
           <i class='fa fa-google-plus'></i>
         </a>
-        <a href='#' id='facebook-share' class='facebook'><i class='fa fa-facebook'></i></a>
-        <a target='_blank' href="https://twitter.com/intent/tweet?text=<%= @article.summary %>&hashtags=needl&url=http://blog.needl.fr/articles/<%= @article.id %>" id='twitter-share' class='twitter'><i class='fa fa-twitter'></i></a>
+        <a href='#' id='facebook-share-top' class='facebook'><i class='fa fa-facebook'></i></a>
+        <a target='_blank' href="https://twitter.com/intent/tweet?text=<%= @article.summary %>&hashtags=needl&url=http://blog.needl.fr/articles/<%= @article.id %>" id='twitter-share' class='twitter'>
+          <i class='fa fa-twitter'></i>
+        </a>
       </div>
     </div>
     <div class='content'>
       <%= @article.content.html_safe %>
     </div>
     <div class='social'>
-      <a href="https://plus.google.com/share?url={http://blog.needl.fr/articles/<%= @article.id %>}" class='google-plus' onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
-        <i class='fa fa-google-plus'></i>
+      <a href="https://plus.google.com/share?url={http://blog.needl.fr/articles/<%= @article.id %>}" id='google-share' class='google-plus' onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          <i class='fa fa-google-plus'></i>
       </a>
-      <a href='#' class='facebook'><i class='fa fa-facebook'></i></a>
-      <a href='#' class='twitter'><i class='fa fa-twitter'></i></a>
+      <a href='#' id='facebook-share-bottom' class='facebook'><i class='fa fa-facebook'></i></a>
+      <a target='_blank' href="https://twitter.com/intent/tweet?text=<%= @article.summary %>&hashtags=needl&url=http://blog.needl.fr/articles/<%= @article.id %>" id='twitter-share' class='twitter'>
+        <i class='fa fa-twitter'></i>
+      </a>
     </div>
   </div>
 </div>
