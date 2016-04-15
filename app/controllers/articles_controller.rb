@@ -55,9 +55,14 @@ class ArticlesController < ApplicationController
     }
 
     @article = Article.find_by(id: params['id'])
-    renderer = Redcarpet::Render::HTML.new(options)
-    markdown = Redcarpet::Markdown.new(renderer, extensions)
-    @article.content = markdown.render(@article.content)
+
+    if @article == nil
+      redirect_to articles_path
+    else
+      renderer = Redcarpet::Render::HTML.new(options)
+      markdown = Redcarpet::Markdown.new(renderer, extensions)
+      @article.content = markdown.render(@article.content)
+    end
   end
 
   private
