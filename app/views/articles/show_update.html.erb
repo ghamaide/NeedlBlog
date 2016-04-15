@@ -1,0 +1,14 @@
+<div class='update_article'>
+  <%= simple_form_for(@article, :url => articles_path(@article, :token => 'UpfEh7YNxUr2LOu0BInG')) do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :author, placeholder: @article.author %>
+    <%= f.input :model, placeholder: @article.model %>
+    <%= f.input :title, placeholder: @article.title %>
+    <%= f.input :summary, placeholder: @article.summary %>
+    <%= f.input :picture, placeholder: @article.picture %>
+    <%= f.input :content, placeholder: @article.content %>
+
+    <%= f.button :submit %>
+  <% end %>
+</div>

@@ -14,6 +14,16 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def show_update
+    @user = User.find_by(token: params['token'])
+
+    if @user != nil && @user.admin == true
+      @article = Article.find_by(id: params['id'])
+    else 
+      redirect_to articles_path
+    end
+  end
+
   def create
     @user = User.find_by(token: params['token'])
     @article = Article.new(restaurant_params)
@@ -30,7 +40,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    puts params['id']
     options = {
       filter_html:     true,
       hard_wrap:       true, 
@@ -46,7 +55,6 @@ class ArticlesController < ApplicationController
     }
 
     @article = Article.find_by(id: params['id'])
-    @picture = @article.picture
     renderer = Redcarpet::Render::HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
     @article.content = markdown.render(@article.content)
