@@ -1,14 +1,18 @@
 <% content_for :head do %>
   <title><%= @article.title %></title>
-  <meta property="og:url"                content="http://needl-blog.herokuapp.com/articles/<%= @article.id %>" />
+
+  <meta property="og:url"                content="http://blog.needl.fr/articles/<%= @article.id %>" />
   <meta property="og:type"               content="article" />
   <meta property="og:title"              content="<%= @article.title %>" />
   <meta property="og:description"        content="<%= @article.summary %>" />
-  <!--<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />-->
+  <meta property="og:image"              content="<%= @article.picture %>" />
+  <meta itemprop="name" content="<%= @article.title %>">
+  <meta itemprop="description" content="<%= @article.summary %>">
+  <meta itemprop="image" content="<%= @article.picture %>">
 <% end %>
 
 <div class='article'>
-  <%= image_tag @picture, {class: 'content_image'} %>
+  <div class='content_image' style="background: url(<%= @article.picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%"></div>
   <div class='container'>
     <div class='header'>
       <%= image_tag 'logo_square.png', {class: 'author_image'} %>
@@ -26,16 +30,20 @@
         </div>
       </div>
       <div class='social'>
-        <a href='#' id='google-share' class='google-plus'><i class='fa fa-google-plus'></i></a>
+        <a href="https://plus.google.com/share?url={http://blog.needl.fr/articles/<%= @article.id %>}" id='google-share' class='google-plus' onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+          <i class='fa fa-google-plus'></i>
+        </a>
         <a href='#' id='facebook-share' class='facebook'><i class='fa fa-facebook'></i></a>
-        <a href='#' id='twitter-share' class='twitter'><i class='fa fa-twitter'></i></a>
+        <a target='_blank' href="https://twitter.com/intent/tweet?text=<%= @article.summary %>&hashtags=needl&url=http://blog.needl.fr/articles/<%= @article.id %>" id='twitter-share' class='twitter'><i class='fa fa-twitter'></i></a>
       </div>
     </div>
     <div class='content'>
       <%= @article.content.html_safe %>
     </div>
     <div class='social'>
-      <a href='#' class='google-plus'><i class='fa fa-google-plus'></i></a>
+      <a href="https://plus.google.com/share?url={http://blog.needl.fr/articles/<%= @article.id %>}" class='google-plus' onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+        <i class='fa fa-google-plus'></i>
+      </a>
       <a href='#' class='facebook'><i class='fa fa-facebook'></i></a>
       <a href='#' class='twitter'><i class='fa fa-twitter'></i></a>
     </div>
