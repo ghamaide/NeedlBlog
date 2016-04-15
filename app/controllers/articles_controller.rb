@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all
-    @image_path = "http://www.opera-restaurant.fr/images/photos/restaurant/large/RH2014-0083.jpg"
   end
 
   def new
@@ -19,7 +18,7 @@ class ArticlesController < ApplicationController
     @user = User.find_by(token: params['token'])
     @article = Article.new(restaurant_params)
 
-    if (restaurant_params[:author].blank? || restaurant_params[:model].blank? || restaurant_params[:content].blank? || restaurant_params[:summary].blank? || restaurant_params[:title].blank?) then
+    if (restaurant_params[:picture].blank? || restaurant_params[:author].blank? || restaurant_params[:model].blank? || restaurant_params[:content].blank? || restaurant_params[:summary].blank? || restaurant_params[:title].blank?) then
       # Eventually add an error message here
       redirect_to articles_path
     else
@@ -47,6 +46,7 @@ class ArticlesController < ApplicationController
     }
 
     @article = Article.find_by(id: params['id'])
+    @picture = @article.picture
     renderer = Redcarpet::Render::HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
     @article.content = markdown.render(@article.content)
@@ -55,6 +55,6 @@ class ArticlesController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:article).permit(:author, :content, :model, :summary, :title)
+    params.require(:article).permit(:author, :content, :model, :summary, :title, :picture)
   end
 end

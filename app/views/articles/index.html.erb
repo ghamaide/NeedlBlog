@@ -1,19 +1,19 @@
 <div class='home'>
   <div class='header'>
     <% if (@articles.length > 0) %>
-      <div class='left' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+      <div class='left' style="background: url(<%= @articles.to_a.slice(0).picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
         <%= render 'shared/header_box', size: 'large', article: @articles.to_a.slice(0) %>
       </div>
     <% end %>
 
     <div class='right'>
       <% if (@articles.length > 1) %>
-        <div class='top' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+        <div class='top' style="background: url(<%= @articles.to_a.slice(1).picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
           <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(1) %>
         </div>
       <% end %>
       <% if (@articles.length > 2) %>
-        <div class='bottom' style="background: url(<%= @image_path %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
+        <div class='bottom' style="background: url(<%= @articles.to_a.slice(2).picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">
           <%= render 'shared/header_box', size: 'small', article: @articles.to_a.slice(2) %>
         </div>
       <% end %>

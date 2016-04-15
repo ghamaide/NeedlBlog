@@ -1,5 +1,5 @@
 <%= link_to article_path(article) do %>
-  <%= image_tag 'restaurant.png', {class: 'content_image'} %>
+  <%= image_tag article.picture, {class: 'content_image'} %>
   <div class='infos'>
     <h1 class='title'><%= article.title %></h1>
     <h2 class='subtitle'><%= article.model %></h2>
