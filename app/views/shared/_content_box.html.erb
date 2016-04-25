@@ -1,5 +1,5 @@
 <%= link_to article_path(article) do %>
-  <%= image_tag article.picture, {class: 'content_image'} %>
+  <div class='content_image' style="background: url(<%= article.picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%"></div>
   <div class='infos'>
     <h1 class='title'><%= article.title %></h1>
     <h2 class='subtitle'><%= article.model %></h2>

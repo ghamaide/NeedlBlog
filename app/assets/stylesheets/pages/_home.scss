@@ -95,13 +95,13 @@ $scale_factor: 1;
     flex-direction: row;
     flex-wrap: wrap;
     background-color: $white;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     padding-top: 20px;
-    min-height: 400px;
 
     @include mobile {
       margin: 0px;
+      flex-direction: column;
     }
 
     @include tablet {

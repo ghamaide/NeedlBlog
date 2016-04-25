@@ -15,13 +15,26 @@ $max-width: 250px;
       border-radius: 5px;
     }
 
+    @include mobile {
+      width: 100%;
+      max-width: 100%;
+    }
+
     .content_image {
-      display: block;
-      max-width: $max-width;
-      max-height: $max-width;
-      width: auto;
-      height: auto;
+      width: 100%;
       border-radius: 5px;
+
+      @include mobile {
+        height: 200px;
+      }
+      
+      @include tablet {
+        height: 250px;
+      }
+
+      @include desktop {
+        height: 250px;
+      }
     }
 
     .infos {
