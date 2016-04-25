@@ -1,5 +1,7 @@
 <nav class='menu' id='menu'>
-  <%= image_tag 'logo_white.png', {class: 'logo', id: 'logo_menu'} %>
+  <%= link_to 'http://www.needl.fr' do %>
+    <%= image_tag 'logo_white.png', {class: 'logo', id: 'logo_menu'} %>
+  <% end %>
   <ul>
     <li>
       <%= link_to root_path do %>

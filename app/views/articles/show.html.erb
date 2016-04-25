@@ -18,7 +18,7 @@
       <%= image_tag 'logo_square.png', {class: 'author_image'} %>
       <div class='infos'>
         <span class='author'>Ecrit par <span class='name'><%= @article.author %></span></span>
-        <span class='date'>Publi&eacute; le <span class='day'><%= @article.created_at %></span></span>
+        <span class='date'>Publi&eacute; le <span class='day'><%= @article.created_at.strftime("%d/%m/%Y") %></span></span>
         <span class='type'>BLOGGER INTERVIEW</span>
         <div class='analytics hidden'>
           <span class='likes'>
