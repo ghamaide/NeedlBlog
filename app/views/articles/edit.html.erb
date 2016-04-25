@@ -1,3 +1,6 @@
+<% content_for :head do %>
+  <title>Modification de l'article</title>
+<% end %>
 <div class='edit_article'>
   <%= simple_form_for(@article, :url => article_path(@article, :token => 'UpfEh7YNxUr2LOu0BInG')) do |f| %>
     <%= f.error_notification %>
