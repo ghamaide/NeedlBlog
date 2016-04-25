@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   def index
-    @articles = Article.all
+    @articles = Article.all.order(:rank)
   end
 
   def new
@@ -77,6 +77,6 @@ class ArticlesController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:article).permit(:author, :content, :model, :summary, :title, :picture)
+    params.require(:article).permit(:author, :content, :model, :summary, :title, :picture, :rank)
   end
 end
