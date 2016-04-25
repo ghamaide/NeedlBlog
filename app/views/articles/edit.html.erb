@@ -1,5 +1,5 @@
 <div class='edit_article'>
-  <%= simple_form_for(@article, :url => articles_path(@article, :token => 'UpfEh7YNxUr2LOu0BInG')) do |f| %>
+  <%= simple_form_for(@article, :url => article_path(@article, :token => 'UpfEh7YNxUr2LOu0BInG')) do |f| %>
     <%= f.error_notification %>
 
     <%= f.input :author, placeholder: @article.author %>

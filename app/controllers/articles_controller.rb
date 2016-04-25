@@ -24,6 +24,15 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by(token: params['token'])
+    @article = Article.find_by(id: params['id'])
+    @article.update_attributes(restaurant_params)
+
+    redirect_to article_path(id: params['id'])
+  end
+
+
   def create
     @user = User.find_by(token: params['token'])
     @article = Article.new(restaurant_params)
