@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show_update
+  def edit
     @user = User.find_by(token: params['token'])
 
     if @user != nil && @user.admin == true
