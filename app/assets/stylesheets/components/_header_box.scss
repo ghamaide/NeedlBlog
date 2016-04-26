@@ -1,106 +1,108 @@
-.header {
-  a {
-    display: flex;
-    position: relative;
-    flex: 1;
-    width: 100%;
-    overflow: hidden;
+.home {
+  .header {
+    a {
+      display: flex;
+      position: relative;
+      flex: 1;
+      width: 100%;
+      overflow: hidden;
 
-    .infos {
-      z-index: 100;
-      position: absolute;
-      max-width: 300px;
+      .infos {
+        z-index: 100;
+        position: absolute;
+        max-width: 300px;
 
-      &.large {
-        bottom: 20px;
-        left: 75px;
+        &.large {
+          bottom: 20px;
+          left: 75px;
 
-        @include mobile {
-          left: 10px;
-          bottom: 10px;
+          @include mobile {
+            left: 10px;
+            bottom: 10px;
+          }
+          
+          @include tablet {
+            left: 20px;
+            bottom: 10px;
+          }
         }
-        
-        @include tablet {
+
+        &.small {
+          bottom: 10px;
           left: 20px;
-          bottom: 10px;
+
+          @include mobile {
+            left: 10px;
+          }
         }
-      }
 
-      &.small {
-        bottom: 10px;
-        left: 20px;
-
-        @include mobile {
-          left: 10px;
-        }
-      }
-
-      .title {
-        color: $gray-light;
-        font-size: 11pt;
-        padding: 0;
-        margin: 15px 0 0 0;
-        text-align: left;
-        font-weight: normal;
-      }
-
-      .subtitle {
-        color: $green;
-        text-transform: uppercase;
-        font-size: 8pt;
-        padding: 0;
-        margin: 5px 0 8px 0;
-        text-align: left;
-        font-weight: normal;
-      }
-
-      .description {
-        color: $gray-light;
-        font-size: 9pt;
-        padding: 0;
-        margin: 5px 0 10px 0;
-        text-align: justify;
-        font-weight: normal;
-      }
-
-      .footer {
-        margin: 10px 0 0 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .author {
+        .title {
           color: $gray-light;
-          font-size: 8pt;
+          font-size: 11pt;
           padding: 0;
+          margin: 15px 0 0 0;
           text-align: left;
           font-weight: normal;
         }
 
-        .analytics {
+        .subtitle {
+          color: $green;
+          text-transform: uppercase;
+          font-size: 8pt;
+          padding: 0;
+          margin: 5px 0 8px 0;
+          text-align: left;
+          font-weight: normal;
+        }
+
+        .description {
+          color: $gray-light;
+          font-size: 9pt;
+          padding: 0;
+          margin: 5px 0 10px 0;
+          text-align: justify;
+          font-weight: normal;
+        }
+
+        .footer {
+          margin: 10px 0 0 0;
           display: flex;
-          justify-content: flex-end;
+          flex-direction: row;
           align-items: center;
-          flex: 1;
 
-          .views {
-            font-size: 8pt;
+          .author {
             color: $gray-light;
-            margin: 0 5px;
-
-            .fa {
-              margin-right: 5px;
-            }
+            font-size: 8pt;
+            padding: 0;
+            text-align: left;
+            font-weight: normal;
           }
 
-          .likes {
-            margin: 0 5px;
-            font-size: 10pt;
-            color: $gray-light;
+          .analytics {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1;
 
-            .fa {
-              color: $red;
-              margin-right: 5px;
+            .views {
+              font-size: 8pt;
+              color: $gray-light;
+              margin: 0 5px;
+
+              .fa {
+                margin-right: 5px;
+              }
+            }
+
+            .likes {
+              margin: 0 5px;
+              font-size: 10pt;
+              color: $gray-light;
+
+              .fa {
+                color: $red;
+                margin-right: 5px;
+              }
             }
           }
         }

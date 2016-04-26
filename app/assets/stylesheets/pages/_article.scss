@@ -148,6 +148,7 @@ $social_icon_height: 32px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 10px 0 0 0;
 
     a {
       display: flex;
@@ -207,6 +208,21 @@ $social_icon_height: 32px;
             opacity: .8;
           }
         }
+      }
+    }
+  }
+
+  .link-needl {
+    margin: 20px 0;
+
+    a {
+      color: $red;
+      text-decoration: none;
+
+      &:hover {
+        color: $red-hover;
+        text-decoration: underline;
+
       }
     }
   }

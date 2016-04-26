@@ -42,13 +42,14 @@ $desktop-width: 1024px;
  * ------------------------------------- */
 
 $red: #FE3139;
+$red-hover: rgba(254, 49, 57, 0.8);
 $blue: #3A325D;
 $green: #9CE62A;
 $gray-dark: #837D9B;
 $gray: #C1BFCC;
 $gray-light: #EEEDF1;
 $white: #FFFFFF;
-$transparent_white: rgba(255, 255, 255, 0.9);
+$transparent-white: rgba(255, 255, 255, 0.9);
 
 $link: $white;
 $link-hover: $gray;
