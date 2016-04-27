@@ -1,7 +1,8 @@
 $height: 500px;
 $height_mobile: 250px;
 $margin: 3px;
-$scale_factor: 1;
+$opacity: 0.4;
+$opacity-hover: 0.2;
 
 .home {
   .header {
@@ -9,6 +10,7 @@ $scale_factor: 1;
     width: 100%;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     @include mobile {
       flex-direction: column;
@@ -18,25 +20,43 @@ $scale_factor: 1;
       display: flex;
       margin-right: $margin;
       height: $height;
-      filter: brightness(90%);
+      position: relative;
 
       @include mobile {
         flex: 1;
         width: 100%;
         margin: 5px 0;
         height: $height_mobile;
+
+        .inner {
+          position: absolute;
+          top: 0; bottom: 0; left: 0; right: 0;
+          background: rgba(0, 0, 0, $opacity-hover);
+        }
       }
 
       @include tablet {
         flex: 1;
+
+        .inner {
+          position: absolute;
+          top: 0; bottom: 0; left: 0; right: 0;
+          background: rgba(0, 0, 0, $opacity-hover);
+        }
       }
 
       @include desktop {
         flex: 2;
-      }
 
-      &:hover {
-        filter: brightness(100%);
+        .inner {
+          position: absolute;
+          top: 0; bottom: 0; left: 0; right: 0;
+          background: rgba(0, 0, 0, $opacity);
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
       }
     }
 
@@ -46,6 +66,7 @@ $scale_factor: 1;
       flex: 1;
       margin-left: $margin;
       width: 100%;
+      position: relative;
 
       @include mobile {
         margin: 0;
@@ -57,15 +78,37 @@ $scale_factor: 1;
         width: 100%;
         height: $height / 2 - $margin;
         margin-bottom: $margin;
-        filter: brightness(90%);
+        position: relative;
 
         @include mobile {
           height: $height_mobile;
           margin: 5px 0;
+
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity-hover);
+          }
         }
 
-        &:hover {
-          filter: brightness(100%);
+        @include tablet {
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity-hover);
+          }
+        }
+
+        @include desktop {
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity);
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
 
@@ -75,15 +118,37 @@ $scale_factor: 1;
         width: 100%;
         height: $height / 2 - $margin;
         margin-top: $margin;
-        filter: brightness(90%);
+        position: relative;
 
         @include mobile {
           height: $height_mobile;
           margin: 5px 0;
+
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity-hover);
+          }
         }
 
-        &:hover {
-          filter: brightness(100%);
+        @include tablet {
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity-hover);
+          }
+        }
+
+        @include desktop {
+          .inner {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            background: rgba(0, 0, 0, $opacity);
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
     }

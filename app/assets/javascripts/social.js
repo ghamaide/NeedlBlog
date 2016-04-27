@@ -1,13 +1,9 @@
-$('#facebook-share-top').click(function() {
-  FB.ui({
-    method: 'share',
-    href: $('meta[property="og:url"]').attr('content'),
-  }, function(response){
-    //console.log(response);
-  });
-});
+/*
+ *  Scripts related to the social media sharing
+ */
 
-$('#facebook-share-bottom').click(function() {
+// Social sharing via Facebook
+$('#facebook-share-top, #facebook-share-bottom').click(function() {
   FB.ui({
     method: 'share',
     href: $('meta[property="og:url"]').attr('content'),
