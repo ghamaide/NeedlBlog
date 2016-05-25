@@ -1,6 +1,5 @@
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -57,6 +56,8 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-sass (4.4.0)
       sass (>= 3.2)
     globalid (0.3.6)
@@ -77,6 +78,7 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    mixpanel-ruby (2.2.0)
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -157,9 +159,11 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   byebug
+  figaro
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
+  mixpanel-ruby
   pg
   puma
   rails (= 4.2.4)

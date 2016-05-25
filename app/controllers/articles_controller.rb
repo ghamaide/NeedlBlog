@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.all.order(:rank)
+    @tracker.track('Blog view', {"referer" => request.referer})
   end
 
   def new
@@ -68,6 +69,7 @@ class ArticlesController < ApplicationController
     if @article == nil
       redirect_to articles_path
     else
+      @tracker.track('Article viewed', {"article" => @article.title})
       renderer = Redcarpet::Render::HTML.new(options)
       markdown = Redcarpet::Markdown.new(renderer, extensions)
       @article.content = markdown.render(@article.content)

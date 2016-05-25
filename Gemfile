@@ -1,20 +1,17 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 ruby "2.2.3"
 
-gem 'rails', '4.2.4'
-gem "pg"
-
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'bootstrap-sass'
-gem 'font-awesome-sass'
-gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'figaro'
+gem 'font-awesome-sass'
+gem 'mixpanel-ruby'
+gem "pg"
+gem 'rails', '4.2.4'
+gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'redcarpet'
-
-gem 'rails_12factor', group: :production
-gem 'puma',           group: :production
+gem 'uglifier', '>= 1.3.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -31,5 +28,10 @@ group :development do
   gem 'spring'
   gem "better_errors"
   gem "binding_of_caller"
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'puma'
 end
 
