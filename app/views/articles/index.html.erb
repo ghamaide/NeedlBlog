@@ -6,7 +6,7 @@
   <meta property="og:description"        content="Dans les coulisses de l'assiette" />
   <meta property="og:image"              content="https://s3-eu-west-1.amazonaws.com/needl/production/blog/auteuil+brasserie.JPG" />
 <% end %>
-<div class='home'>
+<div class='home' id='home'>
   <div class='header'>
     <% if (@articles.length > 0) %>
       <div class='left' style="background: url(<%= @articles.to_a.slice(0).picture %>); background-repeat:no-repeat; background-size:cover; background-position:50% 50%">

@@ -3,12 +3,16 @@ var eventtype = mobilecheck() ? 'touchstart' : 'click';
 $('#menu-trigger').click(function() {
   if ($('#menu').hasClass('open')) {
     resetMenu();
+    $('a').removeClass('disabled');
+    $('.inner').removeClass('hidden');
     document.removeEventListener(eventtype, bodyClick);
   } else {
     setTimeout( function() {
       $('.wrap').addClass('open');
       $('#menuicon').addClass('open');
       $('#menu').addClass('open');
+      $('a').addClass('disabled');
+      $('.inner').addClass('hidden');
       document.addEventListener(eventtype, bodyClick);
     }, 25 );
   }
@@ -37,6 +41,8 @@ function resetMenu() {
 function bodyClick(evt) {
   if(!hasParentClass(evt.target, 'menu')) {
     resetMenu();
+    $('a').removeClass('disabled');
+    $('.inner').removeClass('hidden');
     document.removeEventListener(eventtype, bodyClick);
   }
 }
